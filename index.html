@@ -3,51 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIFELINK Privacy Policy</title>
+<title>LIFELINK — Privacy Policy</title>
+<style>
+  :root{
+    --ink:#0e1626;
+    --ink-soft:#3a4866;
+    --muted:#6b7896;
+    --line:#e4e9f2;
+    --bg:#f7f9fc;
+    --card:#ffffff;
+    --accent:#2f6df6;
+    --accent-deep:#1b3fae;
+    --glow:#7aa8ff;
+    --ok:#0f9d6b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(1100px 500px at 80% -10%, rgba(122,168,255,.35), transparent 60%),
+      radial-gradient(800px 400px at 0% 120%, rgba(47,109,246,.25), transparent 55%),
+      linear-gradient(135deg,#0e1626 0%,#16245a 55%,#1b3fae 100%);
+    color:#fff;
+    padding:64px 24px 72px;
+  }
+  .hero-grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(circle at 70% 0%,#000,transparent 75%);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:820px;margin:0 auto;position:relative}
+  .brand{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    font-size:.78rem;color:var(--glow);
+    border:1px solid rgba(122,168,255,.4);
+    padding:7px 14px;border-radius:999px;
+    background:rgba(255,255,255,.04);
+  }
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow)}
+  h1{
+    font-size:clamp(2.1rem,6vw,3.3rem);
+    line-height:1.08;
+    font-weight:800;
+    letter-spacing:-.02em;
+    margin:22px 0 14px;
+  }
+  h1 span{
+    background:linear-gradient(90deg,#bcd2ff,#ffffff);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .lede{font-size:1.08rem;color:#c7d3f0;max-width:620px}
+  .meta-row{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .chip{
+    font-size:.82rem;color:#dbe5ff;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);
+    padding:6px 13px;border-radius:8px;
+  }
+
+  /* BODY */
+  .wrap{max-width:820px;margin:-40px auto 0;padding:0 24px 80px;position:relative}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:38px 38px 30px;
+    box-shadow:0 20px 50px -28px rgba(16,33,80,.4);
+  }
+  .intro{font-size:1.05rem;color:var(--ink-soft)}
+  .intro strong{color:var(--ink)}
+
+  section{margin-top:36px;scroll-margin-top:20px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .num{
+    flex:none;
+    width:34px;height:34px;border-radius:10px;
+    display:grid;place-items:center;
+    font-weight:700;font-size:.95rem;
+    color:#fff;
+    background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+    box-shadow:0 6px 16px -6px rgba(47,109,246,.6);
+  }
+  h2{font-size:1.18rem;font-weight:700;letter-spacing:-.01em}
+  section p{color:var(--ink-soft);margin-top:4px}
+  ul{margin:12px 0 0;padding-left:0;list-style:none}
+  ul li{
+    position:relative;padding:7px 0 7px 26px;color:var(--ink-soft);
+    border-bottom:1px dashed var(--line);
+  }
+  ul li:last-child{border-bottom:none}
+  ul li::before{
+    content:"";position:absolute;left:4px;top:15px;
+    width:8px;height:8px;border-radius:50%;
+    background:var(--accent);
+  }
+  ul li b{color:var(--ink)}
+
+  /* data deletion callout */
+  .deletion{
+    margin-top:14px;
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    background:linear-gradient(180deg,#f4f8ff,#ffffff);
+    border-radius:12px;
+    padding:22px 24px;
+  }
+  .deletion h3{font-size:1.02rem;margin-bottom:6px}
+  .steps{counter-reset:step;margin-top:14px}
+  .steps li{
+    list-style:none;position:relative;padding:10px 0 10px 40px;border:none;
+    color:var(--ink-soft);
+  }
+  .steps li::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:8px;
+    width:24px;height:24px;border-radius:7px;
+    background:#e8f0ff;color:var(--accent-deep);
+    font-weight:700;font-size:.82rem;
+    display:grid;place-items:center;
+  }
+  .mailbtn{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:14px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+    color:#fff;font-weight:600;font-size:.95rem;
+    padding:11px 20px;border-radius:10px;
+    box-shadow:0 10px 24px -10px rgba(47,109,246,.7);
+  }
+  .mailbtn:hover{text-decoration:none;filter:brightness(1.06)}
+
+  .contact-card{
+    margin-top:36px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+    background:#0e1626;color:#fff;border-radius:14px;padding:24px 28px;
+  }
+  .contact-card h3{font-size:1.05rem;margin-bottom:3px}
+  .contact-card p{color:#aebbd9;font-size:.92rem;margin:0}
+  .contact-card a{color:#bcd2ff;font-weight:600}
+
+  footer{
+    max-width:820px;margin:0 auto;padding:30px 24px 60px;
+    color:var(--muted);font-size:.85rem;text-align:center;
+  }
+  footer .rule{height:1px;background:var(--line);margin-bottom:20px}
+
+  @media (max-width:560px){
+    .card{padding:26px 20px 20px;border-radius:14px}
+    .hero{padding:48px 20px 64px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .card{animation:rise .6s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  }
+</style>
 </head>
-<body style="font-family:Arial,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.6;color:#1a1a1a;background:#fff;">
+<body>
 
-<h1>Privacy Policy — LIFELINK</h1>
-<p><em>Last updated: June 2026 | Operated by ETHAN Studio</em></p>
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <span class="brand"><span class="dot"></span>LIFELINK · ETHAN Studio</span>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="lede">LIFELINK is an open-world social game. This policy explains, in plain language, what we collect when you play, why we collect it, and the control you have over your data.</p>
+    <div class="meta-row">
+      <span class="chip">Last updated: June 2026</span>
+      <span class="chip">Applies to: LIFELINK (Android &amp; PC)</span>
+      <span class="chip">Operated by ETHAN Studio</span>
+    </div>
+  </div>
+</header>
 
-<p>This Privacy Policy explains how ETHAN Studio collects, uses, and protects your information when you use the LIFELINK game.</p>
+<main class="wrap">
+  <div class="card">
+    <p class="intro">This Privacy Policy describes how <strong>ETHAN Studio</strong> ("we", "us", "our") handles your information when you create an account and play <strong>LIFELINK</strong> ("the Game"). We keep data collection to the minimum needed to run the Game, and we never sell your personal information. By playing LIFELINK, you agree to the practices described below.</p>
 
-<h2>1. Information We Collect</h2>
-<p>When you sign in using Facebook, Google, or email, we may collect: your name, profile picture, email address, a unique account ID, and in-game data such as your character, progress, and gameplay activity.</p>
+    <section id="collect">
+      <div class="sec-head"><span class="num">1</span><h2>Information we collect</h2></div>
+      <p>When you sign in using Facebook, Google, or email, and as you play, we may collect:</p>
+      <ul>
+        <li><b>Account basics</b> — your name and profile picture from your chosen sign-in provider.</li>
+        <li><b>Email address</b> — used to identify your account and contact you when needed.</li>
+        <li><b>A unique account ID</b> — so we can recognise you each time you log in.</li>
+        <li><b>In-game data</b> — your character, progress, settings, and gameplay activity inside the world.</li>
+        <li><b>Basic technical data</b> — device and connection information needed to run the Game reliably.</li>
+      </ul>
+    </section>
 
-<h2>2. How We Use Your Information</h2>
-<p>To create and authenticate your account, save your progress, run and improve the game, and contact you about your account when needed.</p>
+    <section id="use">
+      <div class="sec-head"><span class="num">2</span><h2>How we use your information</h2></div>
+      <ul>
+        <li>To create your account and sign you in securely.</li>
+        <li>To save your progress and deliver the multiplayer experience.</li>
+        <li>To operate, maintain, troubleshoot, and improve the Game.</li>
+        <li>To contact you about your account or important service changes.</li>
+        <li>To keep the world safe and enforce our rules against abuse or cheating.</li>
+      </ul>
+    </section>
 
-<h2>3. Data Storage</h2>
-<p>Your account and game data are stored securely on our game servers. We take reasonable measures to protect your information.</p>
+    <section id="store">
+      <div class="sec-head"><span class="num">3</span><h2>How your data is stored &amp; protected</h2></div>
+      <p>Your account and game data are stored on secure game servers. We apply reasonable technical and organisational measures to protect your information against unauthorised access, loss, or misuse. We keep your data only for as long as your account is active or as needed to operate the Game.</p>
+    </section>
 
-<h2>4. Data Sharing</h2>
-<p>We do NOT sell your personal information. We only share data with login providers (Facebook, Google) to authenticate you, our hosting provider to store data, and authorities if required by law.</p>
+    <section id="share">
+      <div class="sec-head"><span class="num">4</span><h2>How we share data</h2></div>
+      <p>We do <b>not</b> sell your personal information. We share data only in these limited cases:</p>
+      <ul>
+        <li><b>Sign-in providers</b> (Facebook, Google) — strictly to authenticate you.</li>
+        <li><b>Hosting &amp; infrastructure providers</b> — to store and run your account and game data on our behalf.</li>
+        <li><b>Legal requirements</b> — when required by applicable law or to protect rights and safety.</li>
+        <li><b>Other players</b> — your public display name and in-world presence are visible to others, as expected in a social game.</li>
+      </ul>
+    </section>
 
-<h2>5. Your Rights</h2>
-<p>You can request access to, correction of, or deletion of your data at any time.</p>
+    <section id="rights">
+      <div class="sec-head"><span class="num">5</span><h2>Your rights &amp; choices</h2></div>
+      <p>You can request access to, correction of, or deletion of your personal data at any time. You may also withdraw a sign-in connection from your provider's settings. To exercise any of these rights, contact us using the details below.</p>
+    </section>
 
-<h2>6. Children's Privacy</h2>
-<p>LIFELINK is not directed at children under 13.</p>
+    <section id="children">
+      <div class="sec-head"><span class="num">6</span><h2>Children's privacy</h2></div>
+      <p>LIFELINK is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has provided us data, contact us and we will remove it.</p>
+    </section>
 
-<h2>7. Changes</h2>
-<p>We may update this policy; changes are posted here with an updated date.</p>
+    <section id="changes">
+      <div class="sec-head"><span class="num">7</span><h2>Changes to this policy</h2></div>
+      <p>We may update this policy as the Game evolves. Any changes will be posted on this page with a revised "Last updated" date. Continued play after changes means you accept the updated policy.</p>
+    </section>
 
-<h2>8. Contact</h2>
-<p>openworldlifelink@gmail.com</p>
+    <section id="data-deletion">
+      <div class="sec-head"><span class="num">8</span><h2>User data deletion</h2></div>
+      <p>You can ask us to permanently delete your LIFELINK account and all associated personal data at any time.</p>
+      <div class="deletion">
+        <h3>How to request deletion</h3>
+        <ol class="steps">
+          <li>Email us at <a href="mailto:openworldlifelink@gmail.com">openworldlifelink@gmail.com</a>.</li>
+          <li>Use the subject line <b>"Delete My Account"</b>.</li>
+          <li>Tell us the email address or sign-in method (Facebook / Google) you used in the Game.</li>
+        </ol>
+        <p style="margin-top:14px">We will permanently delete your account and all associated personal data from our servers within <b>30 days</b> of verifying your request, and confirm by email once it is done.</p>
+        <a class="mailbtn" href="mailto:openworldlifelink@gmail.com?subject=Delete%20My%20Account">✉ Request account deletion</a>
+      </div>
+    </section>
 
-<hr>
+    <div class="contact-card">
+      <div>
+        <h3>Questions about your privacy?</h3>
+        <p>We're happy to help with anything in this policy.</p>
+      </div>
+      <a href="mailto:openworldlifelink@gmail.com">openworldlifelink@gmail.com →</a>
+    </div>
+  </div>
+</main>
 
-<h1>User Data Deletion</h1>
-<p>To delete your LIFELINK account and all personal data:</p>
-<ol>
-<li>Email openworldlifelink@gmail.com</li>
-<li>Subject: "Delete My Account"</li>
-<li>Tell us the email or login (Facebook/Google) you used.</li>
-</ol>
-<p>We will permanently delete your account and data within 30 days and confirm by email.</p>
-
-<p>&copy; 2026 ETHAN Studio</p>
+<footer>
+  <div class="rule"></div>
+  © 2026 ETHAN Studio · LIFELINK. All rights reserved.<br>
+  This page serves as both the Privacy Policy and the User Data Deletion instructions for the LIFELINK application.
+</footer>
 
 </body>
 </html>
