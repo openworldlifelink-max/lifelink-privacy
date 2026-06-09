@@ -119,6 +119,20 @@
   }
   ul li b{color:var(--ink)}
 
+  /* two deletion methods */
+  .methods{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .method{
+    border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+    background:#fff;position:relative;
+  }
+  .method h3{font-size:1rem;margin:10px 0 2px}
+  .tag{
+    font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-deep);background:#e8f0ff;padding:4px 9px;border-radius:6px;
+  }
+  .tag.alt{color:#0a7a52;background:#e3f7ee}
+  @media (max-width:560px){.methods{grid-template-columns:1fr}}
+
   /* data deletion callout */
   .deletion{
     margin-top:14px;
@@ -251,17 +265,38 @@
     </section>
 
     <section id="data-deletion">
-      <div class="sec-head"><span class="num">8</span><h2>User data deletion</h2></div>
-      <p>You can ask us to permanently delete your LIFELINK account and all associated personal data at any time.</p>
+      <div class="sec-head"><span class="num">8</span><h2>Delete your account &amp; data</h2></div>
+      <p>You can permanently delete your LIFELINK account and the personal data linked to it at any time. There are two ways to do it — choose whichever is easier for you.</p>
+
+      <div class="methods">
+        <div class="method">
+          <span class="tag">Fastest</span>
+          <h3>Option 1 — Inside the game</h3>
+          <ol class="steps">
+            <li>Open <b>LIFELINK</b> and go to <b>Settings → Account</b>.</li>
+            <li>Tap <b>Delete Account</b>.</li>
+            <li>Confirm. Your account and data are removed right away.</li>
+          </ol>
+        </div>
+        <div class="method">
+          <span class="tag alt">No app needed</span>
+          <h3>Option 2 — By email</h3>
+          <ol class="steps">
+            <li>Email <a href="mailto:openworldlifelink@gmail.com">openworldlifelink@gmail.com</a>.</li>
+            <li>Subject: <b>"Delete My Account"</b>.</li>
+            <li>Tell us the email or sign-in (Facebook / Google) you used.</li>
+          </ol>
+          <a class="mailbtn" href="mailto:openworldlifelink@gmail.com?subject=Delete%20My%20Account&body=Please%20delete%20my%20LIFELINK%20account%20and%20all%20associated%20data.%20My%20sign-in%20email%2Fmethod%20is%3A%20">✉ Request deletion by email</a>
+        </div>
+      </div>
+
       <div class="deletion">
-        <h3>How to request deletion</h3>
-        <ol class="steps">
-          <li>Email us at <a href="mailto:openworldlifelink@gmail.com">openworldlifelink@gmail.com</a>.</li>
-          <li>Use the subject line <b>"Delete My Account"</b>.</li>
-          <li>Tell us the email address or sign-in method (Facebook / Google) you used in the Game.</li>
-        </ol>
-        <p style="margin-top:14px">We will permanently delete your account and all associated personal data from our servers within <b>30 days</b> of verifying your request, and confirm by email once it is done.</p>
-        <a class="mailbtn" href="mailto:openworldlifelink@gmail.com?subject=Delete%20My%20Account">✉ Request account deletion</a>
+        <h3>What gets deleted, and what we keep</h3>
+        <ul>
+          <li><b>Deleted</b> — your account, profile (name &amp; picture), email, account ID, character, and all gameplay data.</li>
+          <li><b>Temporarily kept</b> — limited records we are legally required to retain (for example, fraud prevention or abuse enforcement) are stored separately and removed once the required period ends.</li>
+        </ul>
+        <p style="margin-top:14px">Email requests are completed within <b>30 days</b> of verifying your identity, and we confirm by email once done. In-app deletion takes effect immediately. We also instruct our hosting providers to delete the corresponding data.</p>
       </div>
     </section>
 
