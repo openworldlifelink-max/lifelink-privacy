@@ -29,6 +29,18 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
+
+  /* NAV */
+  .nav{display:flex;justify-content:space-between;align-items:center;max-width:820px;margin:0 auto 30px;position:relative}
+  .nav-links{display:flex;gap:6px}
+  .nav-links a{
+    color:#c7d3f0;font-size:.88rem;font-weight:600;
+    padding:8px 16px;border-radius:999px;border:1px solid transparent;
+    transition:all .2s ease;
+  }
+  .nav-links a:hover{text-decoration:none;color:#fff;border-color:rgba(122,168,255,.35);background:rgba(255,255,255,.05)}
+  .nav-links a.active{color:#fff;background:rgba(122,168,255,.16);border-color:rgba(122,168,255,.45)}
+
   /* HERO */
   .hero{
     position:relative;
@@ -195,7 +207,13 @@
 <header class="hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <span class="brand"><span class="dot"></span>LIFELINK · ETHAN Studio</span>
+    <div class="nav">
+      <span class="brand"><span class="dot"></span>LIFELINK · ETHAN Studio</span>
+      <nav class="nav-links">
+        <a href="./" class="active">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
     <h1>Privacy <span>Policy</span></h1>
     <p class="lede">LIFELINK is an open-world social game. This policy explains, in plain language, what we collect when you play, why we collect it, and the control you have over your data.</p>
     <div class="meta-row">
@@ -313,7 +331,7 @@
 <footer>
   <div class="rule"></div>
   © 2026 ETHAN Studio · LIFELINK. All rights reserved.<br>
-  This page serves as both the Privacy Policy and the User Data Deletion instructions for the LIFELINK application.
+  This page serves as both the Privacy Policy and the User Data Deletion instructions for the LIFELINK application.<br>See also: <a href="terms.html">Terms of Service</a>
 </footer>
 
 </body>
