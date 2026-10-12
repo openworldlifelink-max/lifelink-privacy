@@ -4,242 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIFELINK — Terms of Service</title>
-<style>
-  :root{
-    --ink:#0e1626;
-    --ink-soft:#3a4866;
-    --muted:#6b7896;
-    --line:#e4e9f2;
-    --bg:#f7f9fc;
-    --card:#ffffff;
-    --accent:#2f6df6;
-    --accent-deep:#1b3fae;
-    --glow:#7aa8ff;
-    --ok:#0f9d6b;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-
-
-  /* NAV */
-  .nav{display:flex;justify-content:space-between;align-items:center;max-width:820px;margin:0 auto 30px;position:relative}
-  .nav-links{display:flex;gap:6px}
-  .nav-links a{
-    color:#c7d3f0;font-size:.88rem;font-weight:600;
-    padding:8px 16px;border-radius:999px;border:1px solid transparent;
-    transition:all .2s ease;
-  }
-  .nav-links a:hover{text-decoration:none;color:#fff;border-color:rgba(122,168,255,.35);background:rgba(255,255,255,.05)}
-  .nav-links a.active{color:#fff;background:rgba(122,168,255,.16);border-color:rgba(122,168,255,.45)}
-
-  /* HERO */
-  .hero{
-    position:relative;
-    overflow:hidden;
-    background:
-      radial-gradient(1100px 500px at 80% -10%, rgba(122,168,255,.35), transparent 60%),
-      radial-gradient(800px 400px at 0% 120%, rgba(47,109,246,.25), transparent 55%),
-      linear-gradient(135deg,#0e1626 0%,#16245a 55%,#1b3fae 100%);
-    color:#fff;
-    padding:64px 24px 72px;
-  }
-  .hero-grid{
-    position:absolute;inset:0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(circle at 70% 0%,#000,transparent 75%);
-    pointer-events:none;
-  }
-  .hero-inner{max-width:820px;margin:0 auto;position:relative}
-  .brand{
-    display:inline-flex;align-items:center;gap:10px;
-    font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-    font-size:.78rem;color:var(--glow);
-    border:1px solid rgba(122,168,255,.4);
-    padding:7px 14px;border-radius:999px;
-    background:rgba(255,255,255,.04);
-  }
-  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow)}
-  h1{
-    font-size:clamp(2.1rem,6vw,3.3rem);
-    line-height:1.08;
-    font-weight:800;
-    letter-spacing:-.02em;
-    margin:22px 0 14px;
-  }
-  h1 span{
-    background:linear-gradient(90deg,#bcd2ff,#ffffff);
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  }
-  .lede{font-size:1.08rem;color:#c7d3f0;max-width:620px}
-  .meta-row{
-    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;
-  }
-  .chip{
-    font-size:.82rem;color:#dbe5ff;
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.14);
-    padding:6px 13px;border-radius:8px;
-  }
-
-  /* BODY */
-  .wrap{max-width:820px;margin:-40px auto 0;padding:0 24px 80px;position:relative}
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:38px 38px 30px;
-    box-shadow:0 20px 50px -28px rgba(16,33,80,.4);
-  }
-  .intro{font-size:1.05rem;color:var(--ink-soft)}
-  .intro strong{color:var(--ink)}
-
-  section{margin-top:36px;scroll-margin-top:20px}
-  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-  .num{
-    flex:none;
-    width:34px;height:34px;border-radius:10px;
-    display:grid;place-items:center;
-    font-weight:700;font-size:.95rem;
-    color:#fff;
-    background:linear-gradient(135deg,var(--accent),var(--accent-deep));
-    box-shadow:0 6px 16px -6px rgba(47,109,246,.6);
-  }
-  h2{font-size:1.18rem;font-weight:700;letter-spacing:-.01em}
-  section p{color:var(--ink-soft);margin-top:4px}
-  ul{margin:12px 0 0;padding-left:0;list-style:none}
-  ul li{
-    position:relative;padding:7px 0 7px 26px;color:var(--ink-soft);
-    border-bottom:1px dashed var(--line);
-  }
-  ul li:last-child{border-bottom:none}
-  ul li::before{
-    content:"";position:absolute;left:4px;top:15px;
-    width:8px;height:8px;border-radius:50%;
-    background:var(--accent);
-  }
-  ul li b{color:var(--ink)}
-
-  /* two deletion methods */
-  .methods{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-  .method{
-    border:1px solid var(--line);border-radius:12px;padding:18px 20px;
-    background:#fff;position:relative;
-  }
-  .method h3{font-size:1rem;margin:10px 0 2px}
-  .tag{
-    font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--accent-deep);background:#e8f0ff;padding:4px 9px;border-radius:6px;
-  }
-  .tag.alt{color:#0a7a52;background:#e3f7ee}
-  @media (max-width:560px){.methods{grid-template-columns:1fr}}
-
-  /* data deletion callout */
-  .deletion{
-    margin-top:14px;
-    border:1px solid var(--line);
-    border-left:4px solid var(--accent);
-    background:linear-gradient(180deg,#f4f8ff,#ffffff);
-    border-radius:12px;
-    padding:22px 24px;
-  }
-  .deletion h3{font-size:1.02rem;margin-bottom:6px}
-  .steps{counter-reset:step;margin-top:14px}
-  .steps li{
-    list-style:none;position:relative;padding:10px 0 10px 40px;border:none;
-    color:var(--ink-soft);
-  }
-  .steps li::before{
-    counter-increment:step;content:counter(step);
-    position:absolute;left:0;top:8px;
-    width:24px;height:24px;border-radius:7px;
-    background:#e8f0ff;color:var(--accent-deep);
-    font-weight:700;font-size:.82rem;
-    display:grid;place-items:center;
-  }
-  .mailbtn{
-    display:inline-flex;align-items:center;gap:8px;
-    margin-top:14px;
-    background:linear-gradient(135deg,var(--accent),var(--accent-deep));
-    color:#fff;font-weight:600;font-size:.95rem;
-    padding:11px 20px;border-radius:10px;
-    box-shadow:0 10px 24px -10px rgba(47,109,246,.7);
-  }
-  .mailbtn:hover{text-decoration:none;filter:brightness(1.06)}
-
-  .contact-card{
-    margin-top:36px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
-    background:#0e1626;color:#fff;border-radius:14px;padding:24px 28px;
-  }
-  .contact-card h3{font-size:1.05rem;margin-bottom:3px}
-  .contact-card p{color:#aebbd9;font-size:.92rem;margin:0}
-  .contact-card a{color:#bcd2ff;font-weight:600}
-
-  footer{
-    max-width:820px;margin:0 auto;padding:30px 24px 60px;
-    color:var(--muted);font-size:.85rem;text-align:center;
-  }
-  footer .rule{height:1px;background:var(--line);margin-bottom:20px}
-
-  @media (max-width:560px){
-    .card{padding:26px 20px 20px;border-radius:14px}
-    .hero{padding:48px 20px 64px}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .card{animation:rise .6s ease both}
-    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  }
-</style>
+<meta name="description" content="The Terms of Service between you and ETHAN Studio for playing LIFELINK, the open-world social game.">
+<meta name="theme-color" content="#0b1230">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LIFELINK — Terms of Service">
+<meta property="og:description" content="The rules of play for LIFELINK, written in plain language.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  try{var t=localStorage.getItem('lifelink-theme');if(t){document.documentElement.setAttribute('data-theme',t)}else if(matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 
 <header class="hero">
   <div class="hero-grid"></div>
+  <span class="orb a"></span><span class="orb b"></span><span class="orb c"></span>
   <div class="hero-inner">
     <div class="nav">
-      <span class="brand"><span class="dot"></span>LIFELINK · ETHAN Studio</span>
-      <nav class="nav-links">
-        <a href="./">Privacy Policy</a>
-        <a href="terms.html" class="active">Terms of Service</a>
-      </nav>
+      <a class="brand" href="./" aria-label="LIFELINK by ETHAN Studio — home">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#3b6cff"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0b1230" stroke="rgba(255,255,255,.15)"/><path d="M22 16v26h20" fill="none" stroke="url(#lg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="42" cy="22" r="6" fill="none" stroke="url(#lg)" stroke-width="5"/></svg>
+        <span class="brand-text"><b>LIFELINK</b><small>ETHAN Studio</small></span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Legal pages">
+          <a href="./">Privacy</a>
+          <a href="terms.html" aria-current="page">Terms</a>
+        </nav>
+        <button class="theme-btn" type="button" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
     </div>
+    <span class="eyebrow"><span class="dot"></span>The rules of the world</span>
     <h1>Terms of <span>Service</span></h1>
     <p class="lede">These terms are the agreement between you and ETHAN Studio when you play LIFELINK. Written in plain language — please read them before playing.</p>
     <div class="meta-row">
-      <span class="chip">Last updated: June 2026</span>
-      <span class="chip">Applies to: LIFELINK (Android &amp; PC)</span>
-      <span class="chip">Operated by ETHAN Studio</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Last updated: June 2026</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>Applies to: LIFELINK (Android &amp; PC)</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>Operated by ETHAN Studio</span>
     </div>
   </div>
 </header>
 
-<main class="wrap">
-  <div class="card">
+<div class="layout">
+  <details class="toc" open>
+    <summary>On this page</summary>
+    <ol>
+      <li><a href="#acceptance">Acceptance of these Terms</a></li>
+      <li><a href="#eligibility">Who can play</a></li>
+      <li><a href="#account">Your account</a></li>
+      <li><a href="#conduct">Code of conduct</a></li>
+      <li><a href="#content">Content &amp; virtual items</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#termination">Suspension &amp; termination</a></li>
+      <li><a href="#disclaimer">Availability &amp; disclaimers</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#contact-terms">Contact</a></li>
+    </ol>
+  </details>
+
+  <main id="main" class="card">
     <p class="intro">By creating an account or playing <strong>LIFELINK</strong> ("the Game"), you agree to these Terms of Service ("Terms") with <strong>ETHAN Studio</strong> ("we", "us"). If you do not agree, please do not use the Game.</p>
 
+    <div class="glance">
+      <h2>At a glance</h2>
+      <div class="glance-grid">
+        <div class="g"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M19 8v6M16 11h6"/></svg></div><b>13+ to play</b><span>Guardian consent if under the age of majority.</span></div>
+        <div class="g"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><b>Play fair</b><span>No cheats, hacks, bots, or harassment.</span></div>
+        <div class="g"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg></div><b>Virtual items</b><span>No real-world monetary value.</span></div>
+        <div class="g"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zM19 7l-3 7a4 4 0 0 0 6 0l-3-7zM8 21h8"/></svg></div><b>Indian law</b><span>Courts of Rajasthan, India.</span></div>
+      </div>
+    </div>
+
     <section id="acceptance">
-      <div class="sec-head"><span class="num">1</span><h2>Acceptance of these Terms</h2></div>
+      <div class="sec-head"><span class="num">1</span><h2>Acceptance of these Terms <a class="anchor" href="#acceptance" aria-label="Link to this section">#</a></h2></div>
       <p>These Terms, together with our <a href="./">Privacy Policy</a>, govern your use of LIFELINK. We may update them as the Game evolves; continued play after an update means you accept the new Terms.</p>
     </section>
 
     <section id="eligibility">
-      <div class="sec-head"><span class="num">2</span><h2>Who can play</h2></div>
+      <div class="sec-head"><span class="num">2</span><h2>Who can play <a class="anchor" href="#eligibility" aria-label="Link to this section">#</a></h2></div>
       <p>You must be at least <b>13 years old</b> to create an account and play LIFELINK. If you are under the age of majority in your region, you confirm that a parent or guardian has reviewed and agreed to these Terms on your behalf.</p>
     </section>
 
     <section id="account">
-      <div class="sec-head"><span class="num">3</span><h2>Your account</h2></div>
+      <div class="sec-head"><span class="num">3</span><h2>Your account <a class="anchor" href="#account" aria-label="Link to this section">#</a></h2></div>
       <ul>
         <li>You are responsible for keeping your login credentials <b>secure</b> — anything done through your account is treated as done by you.</li>
         <li>Provide accurate information when signing up (including a valid email).</li>
@@ -249,7 +105,7 @@
     </section>
 
     <section id="conduct">
-      <div class="sec-head"><span class="num">4</span><h2>Code of conduct</h2></div>
+      <div class="sec-head"><span class="num">4</span><h2>Code of conduct <a class="anchor" href="#conduct" aria-label="Link to this section">#</a></h2></div>
       <p>LIFELINK is a shared world. To keep it fair and safe, you agree <b>not</b> to:</p>
       <ul>
         <li>Cheat, exploit bugs, or use hacks, bots, mods, or any unauthorised third-party software.</li>
@@ -261,37 +117,37 @@
     </section>
 
     <section id="content">
-      <div class="sec-head"><span class="num">5</span><h2>Game content &amp; virtual items</h2></div>
+      <div class="sec-head"><span class="num">5</span><h2>Game content &amp; virtual items <a class="anchor" href="#content" aria-label="Link to this section">#</a></h2></div>
       <p>Characters, currency, items, and progress in LIFELINK are <b>virtual</b>. They have no real-world monetary value, cannot be exchanged for real money, and may be changed, rebalanced, or removed as the Game develops. You receive a limited licence to use them within the Game — you do not own them.</p>
     </section>
 
     <section id="ip">
-      <div class="sec-head"><span class="num">6</span><h2>Intellectual property</h2></div>
+      <div class="sec-head"><span class="num">6</span><h2>Intellectual property <a class="anchor" href="#ip" aria-label="Link to this section">#</a></h2></div>
       <p>The Game — including its code, art, design, names, and logos — belongs to ETHAN Studio. We grant you a personal, non-exclusive, non-transferable licence to play it. You may not copy, distribute, reverse-engineer, or create derivative works from the Game except where the law expressly allows it.</p>
     </section>
 
     <section id="termination">
-      <div class="sec-head"><span class="num">7</span><h2>Suspension &amp; termination</h2></div>
+      <div class="sec-head"><span class="num">7</span><h2>Suspension &amp; termination <a class="anchor" href="#termination" aria-label="Link to this section">#</a></h2></div>
       <p>We may suspend or permanently ban accounts that break these Terms (for example cheating or abuse), with or without notice depending on severity. You may stop playing and delete your account at any time. Sections that by nature should survive (such as IP and liability) survive termination.</p>
     </section>
 
     <section id="disclaimer">
-      <div class="sec-head"><span class="num">8</span><h2>Availability &amp; disclaimers</h2></div>
+      <div class="sec-head"><span class="num">8</span><h2>Availability &amp; disclaimers <a class="anchor" href="#disclaimer" aria-label="Link to this section">#</a></h2></div>
       <p>LIFELINK is provided <b>"as is"</b> and is under active development. We do not promise uninterrupted, error-free service; servers may go down for maintenance, updates, or reasons beyond our control, and features may change. To the maximum extent permitted by law, we disclaim all implied warranties.</p>
     </section>
 
     <section id="liability">
-      <div class="sec-head"><span class="num">9</span><h2>Limitation of liability</h2></div>
+      <div class="sec-head"><span class="num">9</span><h2>Limitation of liability <a class="anchor" href="#liability" aria-label="Link to this section">#</a></h2></div>
       <p>To the maximum extent permitted by law, ETHAN Studio is not liable for indirect, incidental, or consequential damages (including lost data or lost progress) arising from your use of the Game. Nothing in these Terms limits liability that cannot be limited under applicable law.</p>
     </section>
 
     <section id="law">
-      <div class="sec-head"><span class="num">10</span><h2>Governing law</h2></div>
+      <div class="sec-head"><span class="num">10</span><h2>Governing law <a class="anchor" href="#law" aria-label="Link to this section">#</a></h2></div>
       <p>These Terms are governed by the laws of <b>India</b>. Any disputes will be subject to the jurisdiction of the courts of Rajasthan, India.</p>
     </section>
 
     <section id="contact-terms">
-      <div class="sec-head"><span class="num">11</span><h2>Contact</h2></div>
+      <div class="sec-head"><span class="num">11</span><h2>Contact <a class="anchor" href="#contact-terms" aria-label="Link to this section">#</a></h2></div>
       <p>Questions about these Terms? Write to us at <a href="mailto:openworldlifelink@gmail.com">openworldlifelink@gmail.com</a>.</p>
     </section>
 
@@ -302,14 +158,16 @@
       </div>
       <a href="./">Read the Privacy Policy →</a>
     </div>
-  </div>
-</main>
+  </main>
+</div>
 
 <footer>
   <div class="rule"></div>
-  © 2026 ETHAN Studio · LIFELINK. All rights reserved.<br>
-  These Terms of Service apply to the LIFELINK application. See also: <a href="./">Privacy Policy &amp; Data Deletion</a>
+  <p>© 2026 ETHAN Studio · LIFELINK. All rights reserved.</p>
+  <p>These Terms of Service apply to the LIFELINK application. See also: <a href="./">Privacy Policy &amp; Data Deletion</a></p>
 </footer>
 
+<button class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
+<script src="script.js"></script>
 </body>
 </html>
